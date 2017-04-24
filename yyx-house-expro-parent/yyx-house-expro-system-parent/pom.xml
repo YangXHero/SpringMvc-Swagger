@@ -13,7 +13,7 @@
   </parent>
 
   <modules>
-  	<module>yyx-house-expro-intf</module>
-  	<module>yyx-house-expro-service</module>
+  	<module>yyx-house-expro-system</module>
+  	<module>yyx-house-expro-system-intf</module>
   </modules>
 </project>
