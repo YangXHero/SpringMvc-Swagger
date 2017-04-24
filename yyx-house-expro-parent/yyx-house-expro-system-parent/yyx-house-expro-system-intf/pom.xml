@@ -3,10 +3,11 @@
 
 
   
-  <groupId>com.yyx.house.expro.system.intf</groupId>
+	<groupId>com.yyx.house.expro.system.intf</groupId>
 	<artifactId>yyx-house-expro-system-intf</artifactId>
+	<packaging>jar</packaging>
     <description>系统管理：对外暴露接口</description>
-  <version>1.0.0</version>
+	<version>1.0.0</version>
 
   
 </project>

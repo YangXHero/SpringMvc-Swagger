@@ -7,7 +7,8 @@
         <version>2.0.1</version>
     </parent>
 
- <groupId>com.yyx</groupId>
+  <groupId>com.yyx</groupId>
   <artifactId>yyx-house-expro-system</artifactId>
   <version>1.0.0</version>
+  <packaging>jar</packaging>
 </project>
