@@ -669,7 +669,7 @@
 	</dependencies>
     <modules>
   	<module>yyx-house-expro-api</module>
-  	<module>yyx-system-parent</module>
+  	<module>yyx-house-expro-system-parent</module>
   	<module>yyx-house-expro-common</module>
   </modules>
 </project>

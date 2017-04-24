@@ -5,10 +5,6 @@
     <groupId>com.yyx</groupId>
     <artifactId>yyx-house-expro-parent</artifactId>
     <version>1.0.0</version>
+	<description>系统管理：对外暴露接口</description>
   </parent>
-
-  <groupId>com.yyx.house.expro.service</groupId>
-  <artifactId>yyx-house-expro-service</artifactId>
-  <version>1.0.0</version>
-
 </project>
