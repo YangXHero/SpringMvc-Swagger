@@ -22,8 +22,9 @@
 	<mvc:view-controller path="/" view-name="index" />
 
 
-	<!-- 静态文件（css、js、images）配置不经过DispatchServelet处理 -->
+	<!-- 静态文件（css、js、images）配置不经过DispatchServelet处理
 	<mvc:resources location="/static/" mapping="/static/**" />
+	-->
 
 
 	<!-- <bean -->
@@ -62,7 +63,7 @@
 	<!-- </property> -->
 	<!-- </bean> -->
 
-	<!-- <bean id="resolveException" class="com.snailf.security.controller.GlobalController"> -->
+	<!-- <bean id="resolveException" class="com.snailf.security.web.GlobalController"> -->
 	<!-- <property name="exceptionMappings"> -->
 	<!-- <props> -->
 	<!-- <prop key="com.jason.exception.SystemException">error/500</prop> -->
@@ -79,7 +80,6 @@
 		</bean>
 	</mvc:interceptors>
 
-	<!--
-	<import resource="spring-web-aspectj.xml" />
-	-->
+	<!-- <import resource="spring-web-aspectj.xml" />  -->
+
 </beans>
