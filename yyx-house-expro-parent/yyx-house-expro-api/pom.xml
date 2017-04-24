@@ -5,5 +5,21 @@
     <artifactId>yyx-house-expro-parent</artifactId>
     <version>1.0.0</version>
   </parent>
-  <artifactId>yyx-house-expro-api</artifactId>
+
+    <groupId>com.yyx.house.expro.api</groupId>
+    <artifactId>yyx-house-expro-api</artifactId>
+    <version>1.0.0</version>
+    <description>房屋征api</description>
+    <build>
+      <finalName>yyx-house-expro-api</finalName>
+    </build>
+
+    <!--<dependencies>
+      <dependency>
+        <groupId>com.yyx</groupId>
+        <artifactId>yyx-system-intf</artifactId>
+        <version>1.0.0</version>
+      </dependency>
+
+    </dependencies>-->
 </project>
