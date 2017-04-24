@@ -1,0 +1,12 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.yyx</groupId>
+  <artifactId>yyx-house-expro-parent</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+  <modules>
+  	<module>yyx-house-expro-api</module>
+  	<module>yyx-system-parent</module>
+  	<module>yyx-house-expro-common</module>
+  </modules>
+</project>
