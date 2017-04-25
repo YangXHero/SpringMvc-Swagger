@@ -1,8 +1,11 @@
 package com.yyx.house.expro.web;
 
-import com.wordnik.swagger.annotations.ApiOperation;
-import com.wordnik.swagger.annotations.ApiParam;
+
 import com.yyx.core.entity.ResponseEntity;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -15,7 +18,11 @@ public class IndexController {
 
     @RequestMapping(value="/login", method = RequestMethod.GET)
     @ApiOperation(value = "用户登录", httpMethod = "GET", response = ResponseEntity.class, notes = "用户登录")
-    public ResponseEntity login(@ApiParam(required = true, name = "userName", value = "用户名")  String userName,String password) throws Exception{
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "userName", value = "用户名", required = true, dataType = "String"),
+            @ApiImplicitParam(name = "password", value = "密码", required = true, dataType = "String")
+    })
+    public ResponseEntity login(String userName, String password) throws Exception{
 //        UcUser ucUser = ucUserManager.getUserByName(name);
 
 //        if(ucUser != null) {
