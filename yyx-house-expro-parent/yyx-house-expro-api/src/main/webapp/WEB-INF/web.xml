@@ -45,14 +45,14 @@
 	</context-param>
 
 
-	<filter>
+	<!--<filter>
 		<filter-name>DelegatingFilterProxy</filter-name>
 		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
 		<async-supported>true</async-supported>
 		<init-param>
 			<param-name>targetBeanName</param-name>
 			<param-value>securitySessionFilter</param-value>
-	<!-- //自己过滤器的名字 -->
+	&lt;!&ndash; //自己过滤器的名字 &ndash;&gt;
 		</init-param>
 		<init-param>
 			<param-name>targetFilterLifecycle</param-name>
@@ -63,7 +63,7 @@
 	<filter-mapping>
 		<filter-name>DelegatingFilterProxy</filter-name>
 		<url-pattern>/*</url-pattern>
-	</filter-mapping>
+	</filter-mapping>-->
 
 
 
@@ -110,9 +110,6 @@
 		<welcome-file>index</welcome-file>
 	</welcome-file-list>
 
-<!-- 	<listener> -->
-<!-- 		<listener-class>com.snailf.sp2p.app.listener.SessionListener</listener-class> -->
-<!-- 	</listener> -->
 
 	<session-config>
 		<session-timeout>-1</session-timeout>
