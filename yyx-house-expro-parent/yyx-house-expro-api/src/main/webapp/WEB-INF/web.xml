@@ -6,7 +6,10 @@
 
 
 
-	
+	<context-param>
+        <param-name>webAppRootKey</param-name>
+        <param-value>yyx-house-expro-api-root</param-value>
+    </context-param>
 
 
 	<!-- 字符过滤转码(防止添加到数据库中的数据为乱码) -->
