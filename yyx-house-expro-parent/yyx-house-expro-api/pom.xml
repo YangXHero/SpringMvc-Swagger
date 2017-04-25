@@ -41,7 +41,14 @@
         <artifactId>jackson-core</artifactId>
         <version>2.4.4</version>
     </dependency>
+        <dependency>
+            <groupId>com.platform.common</groupId>
+            <artifactId>yyx-house-expro-common</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
     </dependencies>
+
 
 
 		

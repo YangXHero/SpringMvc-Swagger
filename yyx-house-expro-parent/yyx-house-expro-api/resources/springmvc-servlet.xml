@@ -81,5 +81,6 @@
 	</mvc:interceptors>
 
 	<!-- <import resource="spring-web-aspectj.xml" />  -->
+	<bean class="com.mangofactory.swagger.configuration.SpringSwaggerConfig" />
 
 </beans>
