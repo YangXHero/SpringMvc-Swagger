@@ -1,4 +1,4 @@
-package com.yyx.house.expro.config;
+package com.yyx.config;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;

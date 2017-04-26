@@ -14,10 +14,9 @@
 	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
 		<encoder>
 			<!--格式化输出,%d:日期;%thread:线程名;%-5level：级别,从左显示5个字符宽度;%msg:日志消息;%n:换行符 -->
-			<pattern>
-				[sp2p-app]%d{HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n
+				<!--[sp2p-app]%d{HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n-->
 				<!-- <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n -->
-			</pattern>
+                <pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
 		</encoder>
 	</appender>
 
@@ -43,7 +42,7 @@
 
 	</appender>
 
-	<root level="info">
+	<root level="debug">
 		<appender-ref ref="STDOUT" />
 		<appender-ref ref="LOGFILE" />
 	</root>

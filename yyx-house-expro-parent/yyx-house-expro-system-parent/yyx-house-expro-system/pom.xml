@@ -1,12 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-autoconfigure</artifactId>
-            <version>1.3.2.RELEASE</version>
-        </dependency>
-    </dependencies>
+    
 
     <parent>
         <groupId>com.platform</groupId>
@@ -18,4 +12,290 @@
   <artifactId>yyx-house-expro-system</artifactId>
   <version>1.0.0</version>
   <packaging>jar</packaging>
+  
+  <build>
+		<finalName>snailf-wallet-manager</finalName>
+		<!-- 打包类型文件 -->
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**/*.xml</include>
+					<include>**/*.properties</include>
+					<include>**/*.dic</include>
+					<include>**/*.txt</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*</include>
+				</includes>
+			</resource>
+		</resources>
+	</build>
+  	
+  	<profiles>
+		<profile>
+			<id>product</id>
+			<properties>
+				<package.environment>product</package.environment>
+			</properties>
+			<build>
+				<resources>
+					<resource>
+						<directory>src/main/resources</directory>
+						<includes>
+							<include>**/*</include>
+						</includes>
+						<excludes>
+							<exclude>${package.environment}/*</exclude>
+						</excludes>
+						<filtering>true</filtering>
+					</resource>
+					<resource>
+						<directory>src/main/env/${package.environment}</directory>
+						<includes>
+							<include>**/*</include>
+						</includes>
+						<filtering>true</filtering>
+					</resource>
+				</resources>
+			</build>
+		</profile>
+		<profile>
+			<id>test</id>
+			<properties>
+				<package.environment>test</package.environment>
+			</properties>
+			<build>
+				<resources>
+					<resource>
+						<directory>src/main/resources</directory>
+						<includes>
+							<include>**/*</include>
+						</includes>
+						<excludes>
+							<exclude>${package.environment}/*</exclude>
+						</excludes>
+						<filtering>true</filtering>
+					</resource>
+					<resource>
+						<directory>src/main/env/${package.environment}</directory>
+						<includes>
+							<include>**/*</include>
+						</includes>
+						<filtering>true</filtering>
+					</resource>
+				</resources>
+			</build>
+		</profile>
+		<profile>
+			<id>dev</id>
+			<properties>
+				<package.environment>dev</package.environment>
+			</properties>
+			<build>
+				<resources>
+					<resource>
+						<directory>src/main/resources</directory>
+						<includes>
+							<include>**/*</include>
+						</includes>
+						<excludes>
+							<exclude>${package.environment}/*</exclude>
+						</excludes>
+						<filtering>true</filtering>
+					</resource>
+					<resource>
+						<directory>src/main/env/${package.environment}</directory>
+						<includes>
+							<include>**/*</include>
+						</includes>
+						<filtering>true</filtering>
+					</resource>
+				</resources>
+			</build>
+		</profile>
+	</profiles>
+
+	<dependencies>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>3.2.8</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>1.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+			<version>1.0.16</version>
+		</dependency>
+
+		<dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		</dependency>
+
+		<!-- dubbo -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>dubbo</artifactId>
+			<version>2.5.3</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>spring</artifactId>
+					<groupId>org.springframework</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>com.101tec</groupId>
+			<artifactId>zkclient</artifactId>
+			<version>0.7</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>slf4j-log4j12</artifactId>
+					<groupId>org.slf4j</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>log4j</artifactId>
+					<groupId>log4j</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.zookeeper</groupId>
+			<artifactId>zookeeper</artifactId>
+			<version>3.4.8</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>slf4j-log4j12</artifactId>
+					<groupId>org.slf4j</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>log4j</artifactId>
+					<groupId>log4j</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!-- dubbo -->
+
+		<!-- 测试 框架 start -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- 测试 框架 end -->
+
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.6</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.6.2</version>
+		</dependency>
+		
+		<!-- logback start -->
+		<dependency>  
+            <groupId>org.slf4j</groupId>  
+            <artifactId>slf4j-api</artifactId>  
+            <version>1.7.12</version>  
+        </dependency>  
+        <dependency>  
+            <groupId>ch.qos.logback</groupId>  
+            <artifactId>logback-classic</artifactId>  
+            <version>1.1.3</version>  
+            <scope>compile</scope>  
+            <exclusions>  
+                <exclusion>  
+                    <artifactId>slf4j-api</artifactId>  
+                    <groupId>org.slf4j</groupId>  
+                </exclusion>  
+            </exclusions>  
+        </dependency>  
+  
+        <dependency>  
+            <groupId>ch.qos.logback</groupId>  
+            <artifactId>logback-core</artifactId>  
+            <version>1.1.3</version>  
+            <exclusions>  
+                <exclusion>  
+                    <groupId>org.slf4j</groupId>  
+                    <artifactId>slf4j-api</artifactId>  
+                </exclusion>  
+            </exclusions>  
+            <scope>compile</scope>  
+        </dependency>  
+  
+        <dependency>  
+            <groupId>ch.qos.logback</groupId>  
+            <artifactId>logback-access</artifactId>  
+            <version>1.1.3</version>  
+            <exclusions>  
+                <exclusion>  
+                    <groupId>org.slf4j</groupId>  
+                    <artifactId>slf4j-api</artifactId>  
+                </exclusion>  
+            </exclusions>  
+            <scope>compile</scope>  
+        </dependency>  
+		<!-- logback end -->
+		
+		<!-- 依赖common工具包 -->
+		
+
+		
+		<!-- httpclient start -->
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.3.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpcore</artifactId>
+			<version>4.3.2</version>
+		</dependency>
+		<!-- httpclient end -->
+		
+		<dependency>
+           	<groupId>com.yyx.house.expro.system.intf</groupId>
+			<artifactId>yyx-house-expro-system-intf</artifactId>
+			<version>1.0.0</version>
+        </dependency>
+		
+		<!-- 依赖common工具包 -->
+		<dependency>
+            <groupId>com.platform.common</groupId>
+            <artifactId>yyx-house-expro-common</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>2.9.2</version>
+		</dependency>
+
+	</dependencies>
+  
+  
 </project>
