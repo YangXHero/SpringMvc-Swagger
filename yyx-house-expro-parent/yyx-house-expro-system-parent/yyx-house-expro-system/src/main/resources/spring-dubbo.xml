@@ -17,16 +17,15 @@
 
 	<!-- 使用zookeeper注册中心暴露服务地址 -->
 	<dubbo:registry address="${zk.url}" />
-	<dubbo:service interface="com.yyx.system.IUserService" ref="IUserServiceImpl"/>
 
-	<!-- 用dubbo协议在20880端口暴露服务 -->
-	<dubbo:protocol name="dubbo" port="${dubbo.port}" host="${dubbo.url}"/>
+    <!-- 用dubbo协议在20880端口暴露服务 -->
+    <dubbo:protocol name="dubbo" port="${dubbo.port}" host="${dubbo.url}"/>
 
-	<!-- 声明需要暴露的服务接口 -->
-	
-	
-		
-		
+    <!-- 声明需要暴露的服务接口 -->
+    <bean id="iUserServiceImpl" class="com.yyx.system.intf.impl.IUserServiceImpl" />
+	<dubbo:service interface="com.yyx.system.IUserService" ref="iUserServiceImpl" timeout="6000"/>
+
+
 	
 
 </beans>
