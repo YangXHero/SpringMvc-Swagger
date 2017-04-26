@@ -1,11 +1,11 @@
-package com.yyx.house.expro.config;
+package com.yyx.config;
 
 import org.springframework.boot.SpringApplication;
 
 /**
  * Created by zhangya on 2017/4/24.
  */
-public class HouseExproApplication {
+public class SystemApplication {
     public static void main(String[] args) {
 
         SpringApplication springApplication = new SpringApplication(ApplicationConfig.class);
