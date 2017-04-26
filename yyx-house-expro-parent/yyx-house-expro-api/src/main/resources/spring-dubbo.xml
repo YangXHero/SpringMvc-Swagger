@@ -10,5 +10,6 @@
 	<dubbo:application name="consumer-house-expro-api" />
 	<dubbo:registry protocol="zookeeper" address="${zk.url}" />
 
+    <!--<dubbo:reference interface="com.yyx.system.IUserService" id="IUserService" />-->
 
 </beans>

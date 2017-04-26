@@ -1,17 +1,16 @@
 package com.yyx.system.intf.service.impl;
 
-import java.util.Map;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.yyx.system.entity.AccessUserEntity;
 import com.yyx.system.intf.mapper.AccessUserMapper;
 import com.yyx.system.intf.service.AccessUserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.Map;
 @Service("accessUserService")
 public class AccessUserServiceImpl implements AccessUserService{
 	
-	@Autowired
+	@Autowired(required = false)
 	private AccessUserMapper accessUserMapper;
 	@Override
 	public int deleteByPrimaryKey(Long id) {
