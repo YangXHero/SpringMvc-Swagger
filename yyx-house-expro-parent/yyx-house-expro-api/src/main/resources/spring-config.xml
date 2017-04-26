@@ -31,13 +31,7 @@
 			expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
 
-    <!-- swagger -->
-	<context:component-scan base-package="com.yyx.config" />
-    <context:component-scan base-package="com.yyx.house.expro.web" />
-    <mvc:default-servlet-handler />
 
-    <mvc:resources mapping="swagger-ui.html" location="classpath:/META-INF/resources/"/>
-    <mvc:resources mapping="/webjars/**" location="classpath:/META-INF/resources/webjars/"/>
 
 
     <import resource="spring-dubbo.xml" />
