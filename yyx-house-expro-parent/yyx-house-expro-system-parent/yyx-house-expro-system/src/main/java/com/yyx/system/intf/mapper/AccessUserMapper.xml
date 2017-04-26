@@ -26,7 +26,7 @@
     delete from access_user
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.yyx.zbhr.entity.AccessUserEntity" >
+  <insert id="insert" parameterType="com.yyx.system.entity.AccessUserEntity" >
     insert into access_user (id, user_id, user_name, 
       password, creator_id, create_time, 
       updator_id, update_time)
@@ -34,7 +34,7 @@
       #{password,jdbcType=VARCHAR}, #{creatorId,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, 
       #{updatorId,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.yyx.zbhr.entity.AccessUserEntity" >
+  <insert id="insertSelective" parameterType="com.yyx.system.entity.AccessUserEntity" >
     insert into access_user
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -89,7 +89,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.yyx.zbhr.entity.AccessUserEntity" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.yyx.system.entity.AccessUserEntity" >
     update access_user
     <set >
       <if test="userId != null" >
@@ -116,7 +116,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.yyx.zbhr.entity.AccessUserEntity" >
+  <update id="updateByPrimaryKey" parameterType="com.yyx.system.entity.AccessUserEntity" >
     update access_user
     set user_id = #{userId,jdbcType=BIGINT},
       user_name = #{userName,jdbcType=VARCHAR},
@@ -142,7 +142,7 @@
 		</if>
 	</select>
 	<!-- 更新考核用户对象 -->
-	<update id="updateKHUser" parameterType="com.yyx.zbhr.entity.AccessUserEntity" >
+	<update id="updateKHUser" parameterType="com.yyx.system.entity.AccessUserEntity" >
     update access_user
     <set >
       <if test="userName != null" >

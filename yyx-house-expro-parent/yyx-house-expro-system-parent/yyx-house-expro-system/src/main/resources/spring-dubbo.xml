@@ -17,7 +17,7 @@
 
 	<!-- 使用zookeeper注册中心暴露服务地址 -->
 	<dubbo:registry address="${zk.url}" />
-	<!--<dubbo:service interface="com.yyx.system.IUserService" ref="IUserService"/>-->
+	<dubbo:service interface="com.yyx.system.IUserService" ref="IUserServiceImpl"/>
 
 	<!-- 用dubbo协议在20880端口暴露服务 -->
 	<dubbo:protocol name="dubbo" port="${dubbo.port}" host="${dubbo.url}"/>

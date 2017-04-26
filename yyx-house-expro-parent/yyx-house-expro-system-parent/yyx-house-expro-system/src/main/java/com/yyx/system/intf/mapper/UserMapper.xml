@@ -21,7 +21,7 @@
     <result column="us_updator_id" property="updatorId" jdbcType="BIGINT" />
     <result column="us_update_time" property="updateTime" jdbcType="TIMESTAMP" />
   </resultMap>
-  <resultMap id="ResultMapWithBLOBs" type="com.yyx.zbhr.entity.User" extends="BaseResultMap" >
+  <resultMap id="ResultMapWithBLOBs" type="com.yyx.system.entity.User" extends="BaseResultMap" >
     <result column="us_head_photo" property="headPhoto" jdbcType="LONGVARBINARY" />
   </resultMap>
   <sql id="Base_Column_List" >
@@ -47,7 +47,7 @@
     delete from sys_user_tb
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.yyx.zbhr.entity.User" >
+  <insert id="insert" parameterType="com.yyx.system.entity.User" >
     insert into sys_user_tb (id, login_name, user_type, 
       user_name, dept_id, custom_menu, 
       photo_url, password, email, 
@@ -63,7 +63,7 @@
       #{updator,jdbcType=VARCHAR}, #{updatorId,jdbcType=BIGINT}, #{updateTime,jdbcType=TIMESTAMP}, 
       #{headPhoto,jdbcType=LONGVARBINARY})
   </insert>
-  <insert id="insertSelective" parameterType="com.yyx.zbhr.entity.User" useGeneratedKeys="true" keyProperty="id">
+  <insert id="insertSelective" parameterType="com.yyx.system.entity.User" useGeneratedKeys="true" keyProperty="id">
     insert into sys_user_tb
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -184,7 +184,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.yyx.zbhr.entity.User" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.yyx.system.entity.User" >
     update sys_user_tb
     <set >
       <if test="loginName != null" >
@@ -244,7 +244,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.yyx.zbhr.entity.User" >
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.yyx.system.entity.User" >
     update sys_user_tb
     set login_name = #{loginName,jdbcType=VARCHAR},
       user_type = #{userType,jdbcType=SMALLINT},
@@ -266,7 +266,7 @@
       head_photo = #{headPhoto,jdbcType=LONGVARBINARY}
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.yyx.zbhr.entity.User" >
+  <update id="updateByPrimaryKey" parameterType="com.yyx.system.entity.User" >
     update sys_user_tb
     set login_name = #{loginName,jdbcType=VARCHAR},
       user_type = #{userType,jdbcType=SMALLINT},
@@ -619,7 +619,7 @@
 		WHERE NOT EXISTS (SELECT pi.user_id from person_info pi WHERE pi.user_id = sut.id)
 		and sut.hasvalid = 1
     </select>
-        <select id="selectForCreateP"  resultType="com.yyx.zbhr.entity.User">
+        <select id="selectForCreateP"  resultType="com.yyx.system.entity.User">
     	SELECT
 			sut.id AS id,
 			sut.login_name AS loginName,
